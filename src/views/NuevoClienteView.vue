@@ -34,6 +34,37 @@
                         :validation-messages="{ required: 'El nombre del cliente es obligatorio'}"
                         validation-visibility="blur"
                     />
+
+                    <FormKit
+                        type="text"
+                        label="Apellido"
+                        placeholder="Apellido del Cliente"
+                        prefix-icon=""
+                        validation="required"
+                        :validation-messages="{ required: 'El apellido del cliente es obligatorio'}"
+                        validation-visibility="blur"
+                    />
+
+                    <FormKit
+                        type="email"
+                        label="Email"
+                        placeholder="Email del Cliente"
+                        prefix-icon=""
+                        validation="required|email"
+                        :validation-messages="{ required: 'El email del cliente es obligatorio', email: 'Coloca un email válido' }"
+                        validation-visibility="blur"
+                    />
+
+                    <FormKit
+                        type="text"
+                        label="Teléfono"
+                        placeholder="Teléfono: 56 9 XXXX XXXX"
+                        prefix-icon=""
+                        validation="required"
+                        :validation-messages="{ required: 'El teléfono del cliente es obligatorio'}"
+                        validation-visibility="blur"
+                    />
+
                 </FormKit>
             </div>
         </div>
