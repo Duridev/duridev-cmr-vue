@@ -60,8 +60,8 @@
                         label="Teléfono"
                         placeholder="Teléfono: 56 9 XXXX XXXX"
                         prefix-icon=""
-                        validation="required"
-                        :validation-messages="{ required: 'El teléfono del cliente es obligatorio'}"
+                        validation="required|*matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
+                        :validation-messages="{ required: 'El teléfono del cliente es obligatorio', matches: 'El formato no es válido'}"
                         validation-visibility="blur"
                     />
 
