@@ -8,6 +8,10 @@
             type: String
         }
     })
+
+    const handleSubmit = (data) => {
+        console.log('Submit...', data);
+    }
 </script>
 
 
@@ -26,10 +30,12 @@
                     type="form"
                     :actions="false"
                     incomplete-message="No se pudo enviar. Completa todos los campos obligatorios"
+                    @submit="handleSubmit"
                 >
                     <FormKit
                         type="text"
                         label="Nombre"
+                        name="nombre"
                         placeholder="Nombre del Cliente"
                         prefix-icon=""
                         validation="required"
@@ -40,6 +46,7 @@
                     <FormKit
                         type="text"
                         label="Apellido"
+                        name="apellido"
                         placeholder="Apellido del Cliente"
                         prefix-icon=""
                         validation="required"
@@ -50,6 +57,7 @@
                     <FormKit
                         type="email"
                         label="Email"
+                        name="email"
                         placeholder="Email del Cliente"
                         prefix-icon=""
                         validation="required|email"
@@ -60,6 +68,7 @@
                     <FormKit
                         type="text"
                         label="Teléfono"
+                        name="telefono"
                         placeholder="Teléfono: 56 9 XXXX XXXX"
                         prefix-icon=""
                         validation="required|*matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
@@ -70,12 +79,14 @@
                     <FormKit
                         type="text"
                         label="Empresa"
+                        name="empresa"
                         placeholder="Empresa a la que pertenece"
                     />
 
                     <FormKit
                         type="text"
                         label="Cargo"
+                        name="cargo"
                         placeholder="Cargo que realiza en la empresa"
                     />
 
