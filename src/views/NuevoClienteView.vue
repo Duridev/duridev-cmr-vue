@@ -1,4 +1,5 @@
 <script setup>
+    import { reactive } from 'vue';
     import RouterLink from '../components/UI/RouterLink.vue'
     import Heading from '@/components/UI/Heading.vue';
     import { FormKit } from '@formkit/vue'
@@ -12,6 +13,10 @@
     const handleSubmit = (data) => {
         console.log('Submit...', data);
     }
+
+    const formData = ({
+        telefono: '569'
+    })
 </script>
 
 
@@ -31,6 +36,7 @@
                     :actions="false"
                     incomplete-message="No se pudo enviar. Completa todos los campos obligatorios"
                     @submit="handleSubmit"
+                    :value="formData"
                 >
                     <FormKit
                         type="text"
@@ -71,7 +77,7 @@
                         name="telefono"
                         placeholder="Teléfono: 56 9 XXXX XXXX"
                         prefix-icon=""
-                        validation="required|*matches:/^[0-9]{3}-[0-9]{3}-[0-9]{4}$/"
+                        validation="required|*matches:/^[0-9]{11}$/"
                         :validation-messages="{ required: 'El teléfono del cliente es obligatorio', matches: 'El formato no es válido'}"
                         validation-visibility="blur"
                     />
