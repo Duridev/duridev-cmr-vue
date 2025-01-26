@@ -24,6 +24,8 @@
             <div class="mx-auto md:w-2/3 py-20 px-6">
                 <FormKit
                     type="form"
+                    :actions="false"
+                    incomplete-message="No se pudo enviar. Completa todos los campos obligatorios"
                 >
                     <FormKit
                         type="text"
@@ -64,6 +66,25 @@
                         :validation-messages="{ required: 'El teléfono del cliente es obligatorio', matches: 'El formato no es válido'}"
                         validation-visibility="blur"
                     />
+
+                    <FormKit
+                        type="text"
+                        label="Empresa"
+                        placeholder="Empresa a la que pertenece"
+                    />
+
+                    <FormKit
+                        type="text"
+                        label="Cargo"
+                        placeholder="Cargo que realiza en la empresa"
+                    />
+
+                    <FormKit
+                        type="submit"
+                        label="Agregar Cliente"
+                        incomplete-message="No se pudo enviar. Completa todos los campos obligatorios"
+                    />
+                    
 
                 </FormKit>
             </div>
